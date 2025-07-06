@@ -1,1 +1,1 @@
-# rock-paper-scissors-auto-deploy
+# Rock Paper Scissors Auto Deploy
