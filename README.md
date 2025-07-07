@@ -60,13 +60,6 @@ This project demonstrates a complete CI/CD pipeline for a static website. It aut
 - Secure credential management using GitHub Secrets
 - Automating deployment processes for web applications
 
-## Future Improvements
-
-- Add unit tests to the CI/CD pipeline
-- Implement CloudFront for content delivery
-- Configure a custom domain name
-- Add game statistics tracking
-
 ## Setup Instructions
 
 If you want to create a similar project, follow these steps:
