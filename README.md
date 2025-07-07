@@ -17,6 +17,18 @@ This project demonstrates a complete CI/CD pipeline for a static website. It aut
 - **Cloud Storage:** AWS S3
 - **CI/CD:** GitHub Actions
 
+## Repository Structure
+
+    project-root/
+    ├── .github/
+    │   └── workflows/
+    │       └── deploy.yml      # GitHub Actions workflow for S3 deployment
+    ├── index.html              # Main HTML file for the Rock Paper Scissors game
+    ├── style.css               # CSS styling for the game
+    ├── app.js                  # JavaScript game logic
+    └── README.md               # Project documentation
+
+
 ## How It Works
 
 1. Static website files are stored in this GitHub repository
