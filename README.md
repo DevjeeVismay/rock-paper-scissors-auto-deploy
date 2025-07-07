@@ -70,10 +70,10 @@ If you want to create a similar project, follow these steps:
 2. Create an AWS S3 bucket with static website hosting enabled
 3. Set up an IAM user with S3 access
 4. Add the following secrets to your GitHub repository:
-   - AWS_ACCESS_KEY_ID
-   - AWS_SECRET_ACCESS_KEY
-   - AWS_S3_BUCKET
-   - AWS_REGION
+   - `AWS_ACCESS_KEY_ID`
+   - `AWS_SECRET_ACCESS_KEY`
+   - `AWS_S3_BUCKET`
+   - `AWS_REGION`
 5. Push changes to your repository to trigger automatic deployment
 
 ## License
