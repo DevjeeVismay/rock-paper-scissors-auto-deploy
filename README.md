@@ -4,8 +4,6 @@ A simple Rock Paper Scissors game with automated deployment to AWS S3 using GitH
 
 ![Deploy to S3](https://github.com/DevjeeVismay/rock-paper-scissors-auto-deploy/actions/workflows/deploy.yml/badge.svg)
 
-![GitHub Actions Workflow Status](https://github.com/DevjeeVismay/rock-paper-scissors-auto-deploy/actions/workflows/deploy.yml/badge.svg)
-
 ## Project Overview
 
 This project demonstrates a complete CI/CD pipeline for a static website. It automatically deploys code changes to AWS S3 whenever updates are pushed to the main branch.
