@@ -1,0 +1,41 @@
+flowchart TD
+    subgraph "Development"
+        A[Developer] -->|1. Edit Code| B["index.html\nstyle.css\napp.js"]
+        B -->|2. Test Locally| A
+        A -->|3. Commit Changes| C[Git Repository]
+        C -->|4. Push to GitHub| D[GitHub Repository\nrock-paper-scissors-auto-deploy]
+    end
+
+    subgraph "GitHub Actions CI/CD Pipeline"
+        D -->|5. Trigger Workflow| E["deploy.yml Workflow"]
+        E -->|6. Checkout Code| F["actions/checkout@v2"]
+        F -->|7. Setup AWS Credentials| G["aws-actions/configure-aws-credentials@v1"]
+        G -->|8. Deploy to S3| H["aws s3 sync command"]
+    end
+
+    subgraph "AWS Cloud Infrastructure"
+        H -->|9. Upload Files| I["S3 Bucket\ndevjeevismay--rock-paper-scissors"]
+        I -->|10. Configure| J["Static Website Hosting"]
+        J -->|11. Public Access| K["Bucket Policy\nAllows s3:GetObject"]
+        K -->|12. Serve Content| L["S3 Website Endpoint\nHTTP"]
+    end
+
+    subgraph "Security Layer"
+        M["IAM User\ngithub-actions-s3-deploy"] -.->|Provides Access| N["Access Credentials"]
+        N -.->|Stored As| O["GitHub Repository Secrets\nAWS_ACCESS_KEY_ID\nAWS_SECRET_ACCESS_KEY\nAWS_S3_BUCKET\nAWS_REGION"]
+        O -.->|Used By| G
+    end
+
+    L -->|13. Deliver Content| P["End User's Browser\nRock Paper Scissors Game"]
+
+    classDef dev fill:#f5f5f5,stroke:#d9d9d9,color:black;
+    classDef github fill:#24292e,stroke:#c9d1d9,color:#c9d1d9;
+    classDef aws fill:#232F3E,stroke:#FF9900,color:white;
+    classDef security fill:#2e7d32,stroke:#a5d6a7,color:white;
+    classDef users fill:#0277bd,stroke:#81d4fa,color:white;
+
+    class A,B,C dev;
+    class D,E,F,G,H,O github;
+    class I,J,K,L,M,N aws;
+    class M,N,O security;
+    class P users;
